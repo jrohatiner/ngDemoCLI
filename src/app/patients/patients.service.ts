@@ -39,7 +39,7 @@ export class PatientService {
         let self = this;
 
 
-        return this.http.get('api/patients.json').map((res: Response) => {
+        return this.http.get('assets/api/patients.json').map((res: Response) => {
             //reset
             self.patients = [];
             res.json().patientList.forEach((obj: any, idx: number) => {
@@ -53,7 +53,7 @@ export class PatientService {
                     idx,
                     p.firstName,
                     p.lastName,
-                    ['images/avatars/' + (idx % 2 ? 'male' : 'female'),
+                    ['assets/images/avatars/' + (idx % 2 ? 'male' : 'female'),
                         'avatar',
                         //this is to force a new http for every image being loaded, simulate proper images, since
                         //everyone don't look the same.
@@ -72,22 +72,22 @@ export class PatientService {
 
         return new Promise((resolve) => {
             Observable.forkJoin(
-                this.http.get('api/invoices.json').toPromise().then(response => response.json()),
-                this.http.get('api/labResults.json').toPromise().then(res => res.json()),
-                this.http.get('api/patient.json').toPromise().then(res => res.json()),
-                this.http.get('api/physician.json').toPromise().then(res => res.json()),
-                this.http.get('api/prescriptions.json').toPromise().then(res => res.json()),
-                this.http.get('api/visitations.json').toPromise().then(res => res.json())
+                this.http.get('assets/api/invoices.json').toPromise().then(response => response.json()),
+                this.http.get('assets/api/labResults.json').toPromise().then(res => res.json()),
+                this.http.get('assets/api/patient.json').toPromise().then(res => res.json()),
+                this.http.get('assets/api/physician.json').toPromise().then(res => res.json()),
+                this.http.get('assets/api/prescriptions.json').toPromise().then(res => res.json()),
+                this.http.get('assets/api/visitations.json').toPromise().then(res => res.json())
             ).subscribe(data => {
 
                 let api = {
                     'invoices': data[0]['invoices'],
                     'labResults': data[1]['tests'],
                     'patient': function () {
-                        return Object.assign({}, data[2], {imageUrl: self.patients.length ? self.patients[id].imageUrl : 'images/placeholder.svg'});
+                        return Object.assign({}, data[2], {imageUrl: self.patients.length ? self.patients[id].imageUrl : 'assets/images/placeholder.svg'});
                     }(),
                     'physician': function () {
-                        return Object.assign({}, data[3], {imageUrl: 'images/doctor-01.svg'});
+                        return Object.assign({}, data[3], {imageUrl: 'assets/images/doctor-01.svg'});
                     }(),
                     'prescriptions': data[4]['prescriptions'],
                     'visitations': data[5]['visitations']

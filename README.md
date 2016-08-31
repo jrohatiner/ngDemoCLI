@@ -3,7 +3,20 @@
 This project was generated with [angular-cli](https://github.com/angular/angular-cli) version 1.0.0-beta.11-webpack.8.
 
 ## Development server
-Run `ng serve` for a dev server. Navigate to `http://localhost:9000/`. The app will automatically reload if you change any of the source files.
+Run `npm start` for a dev server. Navigate to `http://localhost:9000/`. The app will automatically reload if you change any of the source files.
+
+```
+ ngDemoCli
+  |-- package.json
+  |-- e2e //working progress
+  |-- src //application ts files and sources
+  |    |-- app //keep all ts files
+  |    |-- assets //maintain all assets, this directory will be move on build to dist/assets
+  |    |-- css //define css in angular-cli.json
+  |    |-- environment //view angular-cli docs
+  |    |-- index.html
+ ```
+
 
 ## Code scaffolding
 

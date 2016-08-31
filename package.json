@@ -5,7 +5,7 @@
   "angular-cli": {},
   "scripts": {
     "start": "ng serve --port 9000",
-    "build": "rimraf dist && ng build --prod && node child_process_copy",
+    "build": "rimraf dist && ng build --prod",
     "build:serve": "npm run build && node express.js",
     "lint": "tslint \"src/**/*.ts\"",
     "test": "ng test",
