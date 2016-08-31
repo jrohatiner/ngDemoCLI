@@ -6,7 +6,7 @@
   "scripts": {
     "start": "ng serve --port 9000",
     "build": "rimraf dist && ng build --prod",
-    "build_serve": "rimraf dist && ng build --prod && node express.js",
+    "build:serve": "node run build && node express.js",
     "lint": "tslint \"src/**/*.ts\"",
     "test": "ng test",
     "pree2e": "webdriver-manager update",
