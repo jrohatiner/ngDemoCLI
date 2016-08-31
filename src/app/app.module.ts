@@ -3,28 +3,36 @@ import {HttpModule} from '@angular/http';
 /**
  * Created by ramor11 on 8/10/2016.
  */
-import {NgModule}  from '@angular/core';
+import {NgModule, NgModuleFactoryLoader}  from '@angular/core';
 import {BrowserModule}  from '@angular/platform-browser';
+import {FormsModule}    from '@angular/forms';
+import {AsyncNgModuleLoader} from './utils/async-ng-module-loader';
+import {LocationStrategy, HashLocationStrategy, PathLocationStrategy} from '@angular/common';
 
 //routing
 import {routing}        from './app.routing';
 
 //application declarations
 import {AppComponent}  from './app.component';
-import {PatientsModule} from "./patients/patients.module";
+import {DashboardModule} from "./dashboard/dashboard.module";
 
 
 @NgModule({
-  imports: [
-    BrowserModule,
-    routing,
-    HttpModule,
-    PatientsModule
-  ],
-  declarations: [
-    AppComponent
-  ],
-  bootstrap: [AppComponent]
+	imports     : [
+		BrowserModule,
+		FormsModule,
+		routing,
+		HttpModule,
+		DashboardModule
+	],
+	declarations: [
+		AppComponent
+	],
+	providers   : [
+		{provide: LocationStrategy, useClass: HashLocationStrategy},
+		{provide: NgModuleFactoryLoader, useClass: AsyncNgModuleLoader}
+	],
+	bootstrap   : [AppComponent]
 })
 
 

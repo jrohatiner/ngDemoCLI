@@ -6,7 +6,7 @@ import {Router, ActivatedRoute} from '@angular/router';
 import {Patients} from "./patients.service";
 
 @Component({
-    templateUrl: './views/patients-list.component.html'
+  templateUrl: './views/patients-list.component.html'
 })
 
 

@@ -7,9 +7,7 @@ import {Component, Input} from '@angular/core';
 
 @Component({
 	selector: 'patient-information',
-	// template: require('./views/patient-information.html')
 	templateUrl: './views/patient-information.html'
-
 })
 
 
