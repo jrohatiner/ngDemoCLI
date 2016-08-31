@@ -11,8 +11,8 @@ Run `ng generate component component-name` to generate a new component. You can 
 
 ## Build
 
-Run `npm build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
-Run `npm build:serve` to build the project. Navigate to `http://localhost:9000/`.
+Run `npm run build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
+Run `npm run build:serve` to build the project. Navigate to `http://localhost:9000/`.
 
 ## Running unit tests
 
