@@ -3,9 +3,8 @@
     "declaration": false,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
-    "lib": ["es6", "dom"],
     "mapRoot": "./",
-    "module": "es6",
+    "module": "commonjs",
     "moduleResolution": "node",
     "outDir": "../dist/out-tsc",
     "sourceMap": true,
@@ -13,6 +12,7 @@
     "typeRoots": [
       "../node_modules/@types"
     ],
+    "types" : ["core-js"],
     "removeComments": false,
     "noImplicitAny": true,
     "suppressImplicitAnyIndexErrors": true
