@@ -11,12 +11,12 @@ const patientsRoutes: Routes = [
   },
   {
     path: 'patients',
-    // loadChildren: './patients/patients.module#PatientsModule'
-    loadChildren: load(() => new Promise(resolve => {
-      (require as any).ensure([], (require: any) => {
-        resolve(require('./patients/patients.module').PatientsModule);
-      })
-    }))
+    loadChildren: './patients/patients.module#PatientsModule'
+    // loadChildren: load(() => new Promise(resolve => {
+    //   (require as any).ensure([], (require: any) => {
+    //     resolve(require('./patients/patients.module').PatientsModule);
+    //   })
+    // }))
   }
 ];
 
