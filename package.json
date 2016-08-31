@@ -37,6 +37,7 @@
     "@types/node": "^6.0.38",
     "angular-cli": "1.0.0-beta.11-webpack.8",
     "codelyzer": "~0.0.26",
+    "compress": "^0.99.0",
     "express": "^4.14.0",
     "jasmine-core": "2.4.1",
     "jasmine-spec-reporter": "2.5.0",
